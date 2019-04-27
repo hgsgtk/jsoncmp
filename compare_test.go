@@ -2,7 +2,6 @@ package jsoncmp_test
 
 import (
 	"github.com/hgsgtk/jsoncmp"
-	"io/ioutil"
 	"testing"
 )
 
@@ -29,20 +28,25 @@ func compareTests(t *testing.T) []test {
 
 	return []test{
 		{
-			name: "Compare",
-			x:    getStringByFile(t, "testdata/A.json.golden"),
-			y:    getStringByFile(t, "testdata/A.json.golden"),
+			name: "EquivalentAndEqual",
+			x:    `{"hoge": "huga", "piyo": "bar"}`,
+			y:    `{"hoge": "huga", "piyo": "bar"}`,
 			want: "",
 		},
+		{
+			name: "EquivalentAndNotEqual",
+			x:    `{"hoge": "huga", "piyo": "bar"}`,
+			y:    `{"piyo": "bar", "hoge": "huga"}`,
+			want: "",
+		},
+		{
+			name: "NotEquivalent",
+			x:    `{"hoge": "huga", "piyo": "bar1"}`,
+			y:    `{"piyo": "bar", "hoge": "huga"}`,
+			want: `JSONcmp({string})["piyo"]:
+	-: "bar1"
+	+: "bar"
+`,
+		},
 	}
-}
-
-func getStringByFile(t *testing.T, path string) string {
-	t.Helper()
-
-	bs, err := ioutil.ReadFile(path)
-	if err != nil {
-		t.Fatalf("ioutil.ReadAll(%s) got unexpected error %#v", path, err)
-	}
-	return string(bs)
 }
