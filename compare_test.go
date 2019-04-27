@@ -29,7 +29,11 @@ func compareTests(t *testing.T) []test {
 	return []test{
 		{
 			name: "EquivalentAndEqual",
-			x:    `{"hoge": "huga", "piyo": "bar"}`,
+			x: `
+{
+	"hoge": "huga",
+	"piyo": "bar"
+}`,
 			y:    `{"hoge": "huga", "piyo": "bar"}`,
 			want: "",
 		},
