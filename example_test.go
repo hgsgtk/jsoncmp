@@ -28,7 +28,7 @@ func ExampleDiff() {
 	//   string(Inverse(JSONcmp, map[string]interface{}{
 	// - 	"age":  float64(41),
 	// + 	"age":  float64(42),
-	//  	"name": string("Tom Bake"),
+	//   	"name": string("Tom Bake"),
 	//   }))
 }
 
