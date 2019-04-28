@@ -47,12 +47,11 @@ func compareTests(t *testing.T) []test {
 			name: "NotEquivalent",
 			x:    `{"hoge": "huga", "piyo": "bar1"}`,
 			y:    `{"piyo": "bar", "hoge": "huga"}`,
-			want: `
-string(Inverse(JSONcmp, map[string]interface{}{
-		"hoge": string("huga"),
-	- 	"piyo": string("bar1"),
-	+ 	"piyo": string("bar"),
-}))
+			want: `  string(Inverse(JSONcmp, map[string]interface{}{
+              	"hoge": string("huga"),
+            - 	"piyo": string("bar1"),
+            + 	"piyo": string("bar"),
+              }))
 `,
 		},
 	}
