@@ -1,3 +1,4 @@
+// Package jsoncmp is a Go JSON value comparison library for testing.
 package jsoncmp
 
 import (
