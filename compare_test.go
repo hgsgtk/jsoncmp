@@ -17,7 +17,7 @@ func TestDiff(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := jsoncmp.Diff(tt.x, tt.y); got != tt.want {
-				t.Errorf("jsoncmp.Diff() got %s, want %s", got, tt.want)
+				t.Errorf("jsoncmp.Diff() got '%s', want '%s'", got, tt.want)
 			}
 		})
 	}
