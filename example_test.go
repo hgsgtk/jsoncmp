@@ -30,6 +30,7 @@ func ExampleDiff() {
 	// + 	"age":  float64(42),
 	//   	"name": string("Tom Bake"),
 	//   }))
+	//
 }
 
 type stubT struct{}
