@@ -49,9 +49,9 @@ func compareTests(t *testing.T) []test {
 			y:    `{"piyo": "bar", "hoge": "huga"}`,
 			want: `  string(Inverse(JSONcmp, map[string]interface{}{
     "hoge": string("huga"),
-    - 	"piyo": string("bar1"),
-    + 	"piyo": string("bar"),
-    }))
+- 	"piyo": string("bar1"),
++ 	"piyo": string("bar"),
+}))
 `,
 		},
 	}
