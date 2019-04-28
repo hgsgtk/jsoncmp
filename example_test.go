@@ -25,7 +25,7 @@ func ExampleDiff() {
 
 	// Output:
 	// jsoncmp.Diff() got differs: (-got +want)
-	//  string(Inverse(JSONcmp, map[string]interface{}{
+	// string(Inverse(JSONcmp, map[string]interface{}{
 	// - 	"age":  float64(41),
 	// + 	"age":  float64(42),
 	//  	"name": string("Tom Bake"),
