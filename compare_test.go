@@ -51,7 +51,7 @@ func compareTests(t *testing.T) []test {
     "hoge": string("huga"),
 - 	"piyo": string("bar1"),
 + 	"piyo": string("bar"),
-}))
+  }))
 `,
 		},
 	}
